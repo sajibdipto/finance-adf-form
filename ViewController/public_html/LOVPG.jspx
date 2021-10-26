@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="LOVPG.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelFormLayout id="pfl1">
+                    <af:panelHeader text="panelHeader 1" id="ph1">
+                        <f:facet name="context"/>
+                        <f:facet name="menuBar"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="legend"/>
+                        <f:facet name="info"/>
+                        <af:inputListOfValues id="buyerIdId"
+                                              popupTitle="Search and Select: #{bindings.BuyerId.hints.label}"
+                                              value="#{bindings.BuyerId.inputValue}"
+                                              label="#{bindings.BuyerId.hints.label}"
+                                              model="#{bindings.BuyerId.listOfValuesModel}"
+                                              required="#{bindings.BuyerId.hints.mandatory}"
+                                              columns="#{bindings.BuyerId.hints.displayWidth}"
+                                              shortDesc="#{bindings.BuyerId.hints.tooltip}">
+                            <f:validator binding="#{bindings.BuyerId.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.BuyerId.format}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{bindings.BuyerId.suggestedItems}"/>
+                        </af:inputListOfValues>
+                        <af:inputComboboxListOfValues id="itemTypeId"
+                                                      popupTitle="Search and Select: #{bindings.ItemType.hints.label}"
+                                                      value="#{bindings.ItemType.inputValue}"
+                                                      label="#{bindings.ItemType.hints.label}"
+                                                      model="#{bindings.ItemType.listOfValuesModel}"
+                                                      required="#{bindings.ItemType.hints.mandatory}"
+                                                      columns="#{bindings.ItemType.hints.displayWidth}"
+                                                      shortDesc="#{bindings.ItemType.hints.tooltip}">
+                            <f:validator binding="#{bindings.ItemType.validator}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:button text="back" id="b1" action="*returntosearchPG"/>
+                    </af:panelHeader>
+                </af:panelFormLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

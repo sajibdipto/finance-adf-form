@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+
+<ViewObject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="XxOmFinanceTVO"
+   Version="12.1.3.10.47"
+   InheritPersonalization="merge"
+   SelectListFlags="1"
+   FromListFlags="1"
+   WhereFlags="1"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   SelectAllAttributes="false"
+   PageIterMode="Partial">
+   <ViewAccessor
+      Name="BuyerLOV1"
+      ViewObjectName="model.lov.BuyerLOV"
+      RowLevelBinds="true" >
+   </ViewAccessor>
+   <ListBinding
+      Name="LOV_BuyerId"
+      ListVOName="BuyerLOV1"
+      ListRangeSize="-1"
+      ComboRowCountHint="10"
+      NullValueFlag="none"
+      MRUCount="0" >
+      <AttrArray Name="AttrNames">
+         <Item Value="BuyerId" />
+      </AttrArray>
+      <AttrArray Name="AttrExpressions">
+      </AttrArray>
+      <AttrArray Name="ListAttrNames">
+         <Item Value="CustomerId" />
+      </AttrArray>
+      <AttrArray Name="ListDisplayAttrNames">
+         <Item Value="ItemType" />
+         <Item Value="Price" />
+      </AttrArray>
+      <DisplayCriteria
+         Hint="showAndExecute" >
+      </DisplayCriteria>
+   </ListBinding>
+   <EntityUsage
+      Name="XxOmFinanceTEO"
+      Entity="model.entity.XxOmFinanceTEO" >
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="Id"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BuyerId"
+      LOVName="LOV_BuyerId"
+      PrecisionRule="true"
+      EntityAttrName="BuyerId"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="BUYER_ID" >
+      <Properties >
+         <SchemaBasedProperties >
+            <CONTROLTYPE
+               Value="input_text_lov" >
+            </CONTROLTYPE>
+         </SchemaBasedProperties>
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ItemType"
+      PrecisionRule="true"
+      EntityAttrName="ItemType"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="ITEM_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Price"
+      PrecisionRule="true"
+      EntityAttrName="Price"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="PRICE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Fromdate"
+      PrecisionRule="true"
+      EntityAttrName="Fromdate"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="FROMDATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Todate"
+      PrecisionRule="true"
+      EntityAttrName="Todate"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="TODATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      PrecisionRule="true"
+      EntityAttrName="CreationDate"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationBy"
+      PrecisionRule="true"
+      EntityAttrName="CreationBy"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="CREATION_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UpdateDate"
+      PrecisionRule="true"
+      EntityAttrName="UpdateDate"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UpdateBy"
+      PrecisionRule="true"
+      EntityAttrName="UpdateBy"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="UPDATE_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BuyerName"
+      PrecisionRule="true"
+      EntityAttrName="BuyerName"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="BUYER_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      PrecisionRule="true"
+      EntityAttrName="Remarks"
+      EntityUsage="XxOmFinanceTEO"
+      AliasName="REMARKS" >
+   </ViewAttribute>
+   <SortCriteria>
+      <Sort
+         Attribute="Id"/>
+   </SortCriteria>
+</ViewObject>

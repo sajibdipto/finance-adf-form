@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="LOVPGPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxOmFinanceTVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="XxOmFinanceTVO1Iterator"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="XxOmFinanceTVO1Iterator" StaticList="false"
+                  Uses="LOV_BuyerId" id="BuyerId"/>
+    <listOfValues IterBinding="XxOmFinanceTVO1Iterator" id="ItemType"
+                  DTSupportsMRU="true" Uses="LOV_BuyerId" StaticList="false"/>
+  </bindings>
+</pageDefinition>

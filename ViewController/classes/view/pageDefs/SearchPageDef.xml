@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="SearchPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxOmFinanceTVO1" RangeSize="25" DataControl="AppModuleDataControl" id="XxOmFinanceTVO1Iterator"/>
+    <searchRegion Binds="XxOmFinanceTVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="XxOmFinanceTVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XxOmFinanceTVO1Iterator" id="XxOmFinanceTVO1">
+      <nodeDefinition DefName="model.view.XxOmFinanceTVO" Name="XxOmFinanceTVO10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="BuyerId"/>
+          <Item Value="ItemType"/>
+          <Item Value="Price"/>
+          <Item Value="Fromdate"/>
+          <Item Value="Todate"/>
+          <Item Value="CreationDate"/>
+          <Item Value="CreationBy"/>
+          <Item Value="UpdateDate"/>
+          <Item Value="UpdateBy"/>
+          <Item Value="BuyerName"/>
+          <Item Value="Remarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="XxOmFinanceTVO1Iterator" id="BuyerId">
+      <AttrNames>
+        <Item Value="BuyerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxOmFinanceTVO1Iterator" id="BuyerName">
+      <AttrNames>
+        <Item Value="BuyerName"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

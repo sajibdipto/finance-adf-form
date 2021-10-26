@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="searchPG">
+    <page>/searchPG.jspx</page>
+  </view>
+  <view id="LOVPG">
+    <page>/LOVPG.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>searchPG</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>*gotoLOVPG</from-outcome>
+      <to-activity-id>LOVPG</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>LOVPG</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>*returntosearchPG</from-outcome>
+      <to-activity-id>searchPG</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__5">
+    <managed-bean-name>Main_bean</managed-bean-name>
+    <managed-bean-class>view.Main_bean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>
